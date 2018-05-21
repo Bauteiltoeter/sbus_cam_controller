@@ -27,6 +27,7 @@ void bmmcc_init(void)
 	sbus_setvalue(SHUTTER,1024);
 	sbus_setvalue(WHITEBALANCE,1024);
 	sbus_setvalue(ISO,1024);
+	sbus_setvalue(ZOOM, 992);
 }
 
 void bmmcc_run(void)
@@ -149,6 +150,17 @@ void handle_iso(void)
 	{
 		state=0;
 		sbus_setvalue(ISO,1024);
+	}
+}
+
+
+void bmmcc_zoom(int8_t farnear)
+{
+sbus_setvalue(ZOOM, 500);
+
+	if(farnear==1)
+	{
+		
 	}
 }
 
