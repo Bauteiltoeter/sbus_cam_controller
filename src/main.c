@@ -31,9 +31,6 @@ int main(void)
 		process_cccb();
 
 
-			
-
-bmmcc_zoom(1);
 
 		counter++;
 
@@ -165,7 +162,7 @@ void cccb_decode(uint8_t c)
 			break;
 
 		case WAIT_ZOOM:
-			zoom=c;
+			zoom=*((int8_t*)&c);
 			state=WAITING_START;
 
 
@@ -210,6 +207,8 @@ void apply_values(uint16_t focus, uint8_t iris,int8_t wb,int8_t sa,int8_t iso,in
 	bmmcc_ISO(iso);
 	bmmcc_WB(wb);
 	bmmcc_SA(sa);
+	bmmcc_setZoom(zoom);
+	
 
 
 

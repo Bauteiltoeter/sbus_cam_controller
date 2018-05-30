@@ -54,6 +54,12 @@ void sbus_run(void)
 
 void sbus_setvalue(uint8_t channel, uint16_t value)
 {
+	if(value>1850)
+		value=1850;
+
+	if(value < 100)
+		value=100;
+
 	if(channel < 18)
 		sbus_values[channel]=value;
 }

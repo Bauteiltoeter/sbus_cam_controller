@@ -43,8 +43,8 @@ void bmmcc_setIris(iris_t iris);
 void bmmcc_setFocus(uint16_t focus);
 void bmmcc_setAudiolevel(uint16_t level);
 void bmmcc_setFramerate(framerate_t framerate);
+void bmmcc_setZoom(int8_t zoom);
 void bmmcc_ISO(int8_t updown);
 void bmmcc_WB(int8_t updown);
 void bmmcc_SA(int8_t updown);
-void bmmcc_zoom(int8_t farnear);
 #endif

@@ -1,4 +1,4 @@
-#include "bmmcc.h"
+ #include "bmmcc.h"
 #include "sbus.h"
 
 #define IRIS 0//         400=f3.5 450=f3.7 500=f4 550=f4.5 600=f4.8 700=f5.2 750=f5.6 800=f6.2 900=f6.7 950=f7.3 1000=f8 1050=f8.7 1100=f9.5 1200=f10 1250=f11 1300=f12 1350=f14 1400=f15 1500=f16 1550=f17 1600=f19 1650=f21 1700=f22 
@@ -47,6 +47,12 @@ void bmmcc_setIris(iris_t iris)
 void bmmcc_setFramerate(framerate_t framerate)
 {
 	sbus_setvalue(FRAMERATE, framerate);
+}
+
+void bmmcc_setZoom(int8_t zoom)
+{
+
+	sbus_setvalue(ZOOM,1024+(zoom*6)); 
 }
 
 void bmmcc_setFocus(uint16_t focus)
@@ -154,13 +160,4 @@ void handle_iso(void)
 }
 
 
-void bmmcc_zoom(int8_t farnear)
-{
-sbus_setvalue(ZOOM, 500);
-
-	if(farnear==1)
-	{
-		
-	}
-}
 
