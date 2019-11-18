@@ -14,6 +14,9 @@ int main(void)
 	DDRD|= (1<<7);
 	PORTD|=(1<<7);
 
+	//max485 to receive
+	DDRD|= (1<<4) | (1<<5);
+	PORTD&=~((1<<4) | (1<<5));
 
 
 	bmmcc_init();
